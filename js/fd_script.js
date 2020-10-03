@@ -21,7 +21,34 @@ window.addEventListener('DOMContentLoaded', function () {
 	var audWater = new Audio('audio/mouseover3.mp3'),
 		audCWater = new Audio('audio/congrats.mp3');
 
-	calorOutputDraw(80, 175, 34);
+	//Getting MAX CALORIES from base
+
+	function getPersonalMax() {
+		// Создаем экземпляр класса XMLHttpRequest
+		let request = new XMLHttpRequest();
+		// Указываем путь до файла на сервере, который будет обрабатывать наш запрос 
+		let url = "proc/ad_getpersonalmax.php";
+
+		request.open("POST", url, true);
+		request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		request.addEventListener("readystatechange", () => {
+			if (request.readyState === 4 && request.status === 200) {
+				let allPersonalPar = JSON.parse(request.responseText);
+				//console.log(request.responseText);
+				//console.log(allPersonalPar);
+				calorOutputDraw(allPersonalPar.weight, allPersonalPar.height, allPersonalPar.age);
+			}
+		});
+		//	Вот здесь мы и передаем строку с данными, которую формировали выше. И собственно выполняем запрос. 
+		request.send();
+
+
+	}
+
+	getPersonalMax();
+
+
+
 	sumUpCalories();
 
 	//ADD new product to Database
@@ -95,7 +122,7 @@ window.addEventListener('DOMContentLoaded', function () {
 				let thisCalorValue = +request.responseText,
 					thisCVdiv = thisCalorValue / 100,
 					thisGrams = +document.getElementById('qty' + id).value,
-					thisFinalCal = thisCVdiv * thisGrams;
+					thisFinalCal = Math.floor(thisCVdiv * thisGrams);
 
 				document.getElementById('cal' + id).value = thisFinalCal;
 				document.getElementById('cal' + id).style.backgroundColor = '#e2ffc7';
@@ -240,7 +267,8 @@ window.addEventListener('DOMContentLoaded', function () {
 
 					//При нажатии на подсказку подставляем ее в поле и, если есть ВРЕМЯ, добавляем в базу
 					acquiredHintFields.forEach(function (item) {
-						item.style.backgroundColor = '#fff9c7';
+						item.style.backgroundColor = '#ff8f00';
+						item.style.color = '#ffffff';
 						item.addEventListener('click', function () {
 							let thisIdval = item.parentNode.id.slice(4);
 

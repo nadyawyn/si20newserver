@@ -22,7 +22,7 @@
 	</main>
 	<footer class="footer"></footer>
 	<script src="js/tab.js"></script>
-	<script src="js/ad_script.js"></script>
+	<script src="js/fd_script.js"></script>
 </body>
 
 </html>

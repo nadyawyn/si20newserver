@@ -10,7 +10,7 @@ $thisdatabasename = 'si__'.$myname.'_adtracker';
 	//IF there are NO entries for today - INSERT THEM
 	if(!$row_inpcheck) {
 
-		for($i = 0; $i < 12; $i++) {
+		for($i = 0; $i < 15; $i++) {
 			$sql_inpform = 'INSERT INTO `'.$thisdatabasename.'` SET `recdate`="'.$fulldatetoday.'", recname=""';
 			$result_inpform = mysqli_query($link, $sql_inpform);
 		}
