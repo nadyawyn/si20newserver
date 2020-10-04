@@ -1,4 +1,4 @@
 <section class="main_settings-section">
-	<h2>Habit Tracker</h2>
-	some text<br>some text
+	<h2>Vitamins</h2>
+	some text
 </section>

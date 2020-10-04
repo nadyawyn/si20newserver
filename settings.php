@@ -8,6 +8,7 @@
 			@include "content/settings/set_general.php";
 			//@include "content/settings/set_personal.php";
 			//@include "content/settings/set_dt.php";
+			@include "content/settings/set_vt.php";
 			//@include "content/settings/set_ht.php";
 			@include "content/settings/set_ft.php";
 			//@include "content/settings/set_el.php";
