@@ -45,7 +45,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
 	}
 
-	getPersonalMax();
+	//getPersonalMax();
 
 	sumUpCalories();
 
@@ -134,7 +134,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
 	//Getting all calories for the DAY
 	function sumUpCalories() {
-
+		getPersonalMax();
 		// Создаем экземпляр класса XMLHttpRequest
 		let request = new XMLHttpRequest();
 		// Указываем путь до файла на сервере, который будет обрабатывать наш запрос 
