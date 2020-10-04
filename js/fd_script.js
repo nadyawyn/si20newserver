@@ -47,8 +47,6 @@ window.addEventListener('DOMContentLoaded', function () {
 
 	getPersonalMax();
 
-
-
 	sumUpCalories();
 
 	//ADD new product to Database
