@@ -1,13 +1,14 @@
 <div class="ad__base">
 					<h3 class="ad__title">Database</h3>
-					<div class="ad__base-list">
-
 						<div class="ad__base-line add">
 							<input type="text" name="foodins" placeholder="Product name"
 								class="ad__base-input ad__base-input_food" id="addtobalbaseprod">
 							<input type="text" name="foodins" placeholder="Cal" class="ad__base-input ad__base-input_cal" id="addtobalbasecal">
 							<button class="button button_em ad__base_button" id="addtocalbase">ADD</button>
 						</div>
+					<div class="ad__base-list">
+
+						
 						<!-- ! OUTPUT FROM DATABASE  -->
 
 						<?php
