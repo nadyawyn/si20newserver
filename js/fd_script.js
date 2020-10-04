@@ -204,6 +204,7 @@ window.addEventListener('DOMContentLoaded', function () {
 		let thisShare = Math.floor((+calvalue / +maxvalue) * 100);
 
 		if (thisShare < 25) {
+			calorOutputFill.classList.remove('over100');
 			calorOutputFill.classList.remove('from0to25');
 			calorOutputFill.classList.remove('from25to50');
 			calorOutputFill.classList.remove('from50to75');
@@ -211,6 +212,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
 			calorOutputFill.classList.add('from0to25');
 		} else if (thisShare < 50) {
+			calorOutputFill.classList.remove('over100');
 			calorOutputFill.classList.remove('from0to25');
 			calorOutputFill.classList.remove('from25to50');
 			calorOutputFill.classList.remove('from50to75');
@@ -218,6 +220,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
 			calorOutputFill.classList.add('from25to50');
 		} else if (thisShare < 75) {
+			calorOutputFill.classList.remove('over100');
 			calorOutputFill.classList.remove('from0to25');
 			calorOutputFill.classList.remove('from25to50');
 			calorOutputFill.classList.remove('from50to75');
@@ -225,6 +228,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
 			calorOutputFill.classList.add('from50to75');
 		} else if (thisShare < 100) {
+			calorOutputFill.classList.remove('over100');
 			calorOutputFill.classList.remove('from0to25');
 			calorOutputFill.classList.remove('from25to50');
 			calorOutputFill.classList.remove('from50to75');

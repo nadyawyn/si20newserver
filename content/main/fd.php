@@ -1,6 +1,6 @@
 <section class="main__section main__section_ad">
 			<div class="container container_padh">
-				<h2 class="main__title">AlimentationDiary</h2>
+				<h2 class="main__title">FoodDiary</h2>
 				<div class="wrapper">
 					<div class="ad__data">
 						<!-- Printing out WATER inputes -->
