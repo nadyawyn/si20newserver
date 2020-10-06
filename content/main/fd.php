@@ -27,3 +27,4 @@
 			</div>
 		</div>
 </section>
+<script src="js/fd_script.js"></script>

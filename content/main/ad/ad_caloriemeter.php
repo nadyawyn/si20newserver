@@ -5,5 +5,5 @@
 								<div class="ad__caloriemeter-value"><span class="ad__caloriemeter-value_num">0</span> kcal</div>
 							</div>
 						</div>
-						<p>Your max is: <strong id="ad__max"></strong></p>
+						<p>Your max is: <strong id="ad__max">2000</strong></p>
 					</div>
