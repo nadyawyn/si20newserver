@@ -412,15 +412,6 @@ window.addEventListener('DOMContentLoaded', function () {
 			let cupId = item.id.slice(3),
 				cupVal = 1;
 
-			/* let testVal = cupId % 10;
-
-			if (testVal == 0) {
-				console.log(testVal);
-				overlayCWater.classList.remove('visually-hidden');
-				audCWater.play();
-				wCompleteForDay();
-			} */
-
 			if (item.classList.contains('complete')) {
 				cupVal = 0;
 				item.classList.remove('complete');

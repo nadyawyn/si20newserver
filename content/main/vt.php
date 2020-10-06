@@ -15,7 +15,7 @@
 							//print($row_cnt);
 
 							//Getting VITAMIN entries from database
-							$sql_vt2 = 'SELECT * FROM `'.$thisdatabasename2.'` ORDER BY recid';
+							$sql_vt2 = 'SELECT * FROM `'.$thisdatabasename2.'` WHERE `recdate` = "'.$fulldatetoday.'"';
 							$result_vt2 = mysqli_query($link, $sql_vt2);
 
 							$row_vt2 = mysqli_fetch_array($result_vt2);
@@ -27,29 +27,31 @@
 									$result_vt3 = mysqli_query($link, $sql_vt3);
 								}
 		
-								$sql_vt4 = 'SELECT * FROM `'.$thisdatabasename2.'`, `'.$thisdatabasename.'` WHERE '.$thisdatabasename2.'.vitaminid = '.$thisdatabasename.'.vitaminid ORDER BY `vitaminname`';
+								$sql_vt4 = 'SELECT * FROM `'.$thisdatabasename2.'`, `'.$thisdatabasename.'` WHERE '.$thisdatabasename2.'.vitaminid = '.$thisdatabasename.'.vitaminid AND '.$thisdatabasename2.'.recdate = "'.$fulldatetoday.'" ORDER BY `vitaminname`';
+								
 								$result_vt4 = mysqli_query($link, $sql_vt4);
+								
 								while ($row_vt4 = mysqli_fetch_array($result_vt4)) {
-									print('<li class="vitamins__item" id="vt'.$row_vt4['recid'].'">'.$row_vt4['vitaminname'].'</li>');			
+									print('<li class="vitamins__item" id="vt'.$row_vt4['recvid'].'">'.$row_vt4['vitaminname'].'</li>');			
 								}
 							//Если есть, просто выводим	
 							} else {
-								$sql_vt4 = 'SELECT * FROM `'.$thisdatabasename2.'`, `'.$thisdatabasename.'` WHERE '.$thisdatabasename2.'.vitaminid = '.$thisdatabasename.'.vitaminid ORDER BY `vitaminname`';
-								//$sql_vt4 = 'SELECT * FROM `'.$thisdatabasename2.'` ORDER BY recid';
+								$sql_vt4 = 'SELECT * FROM `'.$thisdatabasename2.'`, `'.$thisdatabasename.'` WHERE '.$thisdatabasename2.'.vitaminid = '.$thisdatabasename.'.vitaminid AND '.$thisdatabasename2.'.recdate = "'.$fulldatetoday.'" ORDER BY `vitaminname`';
+
 								$result_vt4 = mysqli_query($link, $sql_vt4);
 								while ($row_vt4 = mysqli_fetch_array($result_vt4)) {
-									print('<li class="vitamins__item" id="vt'.$row_vt4['recid'].'">'.$row_vt4['vitaminname'].'</li>');			
+									print('<li class="vitamins__item');
+									if($row_vt4['vitaminres']) {
+										print(' complete');
+									}
+									print('" id="vt'.$row_vt4['recvid'].'">'.$row_vt4['vitaminname'].'</li>');			
 								}
 
 							}
 
-
-							/* while ($row_vt = mysqli_fetch_array($result_vt)) {
-							print('<li class="vitamins__item" id="vt'.$row_vt['recid'].'">'.$row_vt['vitaminid'].'<span>'.$row_vt['vitaminnote'].'</span> </li>');	
-								
-							} */
 						?>
 					</ul>
 			</div>
 
 		</section>
+		<script src="js/vt_script.js"></script>
