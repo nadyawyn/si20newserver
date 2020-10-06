@@ -45,7 +45,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
 	}
 
-	getPersonalMax();
+	//getPersonalMax();
 
 	sumUpCalories();
 
@@ -134,7 +134,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
 	//Getting all calories for the DAY
 	function sumUpCalories() {
-
+		getPersonalMax();
 		// Создаем экземпляр класса XMLHttpRequest
 		let request = new XMLHttpRequest();
 		// Указываем путь до файла на сервере, который будет обрабатывать наш запрос 
@@ -411,15 +411,6 @@ window.addEventListener('DOMContentLoaded', function () {
 
 			let cupId = item.id.slice(3),
 				cupVal = 1;
-
-			/* let testVal = cupId % 10;
-
-			if (testVal == 0) {
-				console.log(testVal);
-				overlayCWater.classList.remove('visually-hidden');
-				audCWater.play();
-				wCompleteForDay();
-			} */
 
 			if (item.classList.contains('complete')) {
 				cupVal = 0;

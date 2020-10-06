@@ -17,7 +17,7 @@
 <div class="container">
 	<div class="header__tabs">
 		<div class="header__tab header__tab_home">
-			<a href="/si20">HOME</a>
+			<a href="/si20new">HOME</a>
 		</div>
 		<div class="header__tab header__tab_set">
 			/ Settings
