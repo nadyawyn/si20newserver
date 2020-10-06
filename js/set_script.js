@@ -17,6 +17,8 @@ window.addEventListener('DOMContentLoaded', function () {
 
 		newVitamin = document.getElementById('addvitinp'),
 		newVitaminBut = document.getElementById('addvitbutton'),
+		existingVitamin = document.querySelectorAll('.vitamin'),
+		vitDelBtn = document.querySelectorAll('.vitdel'),
 
 		audChoose = new Audio('audio/mouseover3.mp3');
 
@@ -32,7 +34,38 @@ window.addEventListener('DOMContentLoaded', function () {
 	pParUpdate.addEventListener('click', bodyParUpdate, false);
 	bParUpdate.addEventListener('click', bodyParUpdate, false);
 
+	//Обработка витаминов
 	newVitaminBut.addEventListener('click', addNewVitamin, false);
+
+	existingVitamin.forEach(function (item) {
+		item.addEventListener('change', function () {
+
+			let thisVal = item.value.toLowerCase(),
+				thisValClear = thisVal.replace(/['"]+/g, ''),
+				thisId = item.id.slice(2);
+
+			editVitaminList(thisId, thisValClear);
+		});
+	});
+
+	vitDelBtn.forEach(function (item) {
+		item.addEventListener('click', function () {
+
+			audChoose.play();
+
+			let checkMessage = confirm('Delete this one?');
+
+			if (checkMessage == true) {
+				let thisId = item.id.slice(5);
+
+				let thisVitLi = document.getElementById('vtli' + thisId);
+				thisVitLi.remove();
+
+				deleteFromVitaminList(thisId);
+			}
+
+		});
+	});
 
 	function genItemSelect(it) {
 		if (it.classList.contains('inactive')) {
@@ -137,10 +170,53 @@ window.addEventListener('DOMContentLoaded', function () {
 				//console.log(request.responseText);
 				let addedVitInfo = JSON.parse(request.responseText);
 
-				alert('You have added ' + addedVitInfo.newvitadded);
+				if (addedVitInfo.newvitadded) {
+					alert('You have added ' + addedVitInfo.newvitadded);
+				} else {
+					alert('You already have such vitamin =)');
+				}
+
 			}
 		});
 
+		request.send(params);
+	}
+
+	// EDIT existing VITAMIN
+	function editVitaminList(id, vitname) {
+		// Создаем экземпляр класса XMLHttpRequest
+		let request = new XMLHttpRequest();
+		// Указываем путь до файла на сервере, который будет обрабатывать наш запрос 
+		let url = "proc/set_editvitamin.php";
+
+		let params = "thisid=" + id + "&thisvitname=" + vitname;
+
+		request.open("POST", url, true);
+		request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		request.addEventListener("readystatechange", () => {
+			if (request.readyState === 4 && request.status === 200) {
+				//console.log(request.responseText);
+			}
+		});
+		request.send(params);
+	}
+
+	//DELETE existing VITAMIN
+	function deleteFromVitaminList(id) {
+		// Создаем экземпляр класса XMLHttpRequest
+		let request = new XMLHttpRequest();
+		// Указываем путь до файла на сервере, который будет обрабатывать наш запрос 
+		let url = "proc/set_delvitamin.php";
+
+		let params = "thisid=" + id;
+
+		request.open("POST", url, true);
+		request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		request.addEventListener("readystatechange", () => {
+			if (request.readyState === 4 && request.status === 200) {
+				console.log(request.responseText);
+			}
+		});
 		request.send(params);
 	}
 });

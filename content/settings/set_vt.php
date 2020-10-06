@@ -13,9 +13,9 @@ $sql_inpoutput = 'SELECT * FROM `'.$thisdatabasename.'` ORDER BY `vitaminname`';
 		$result_inpoutput = mysqli_query($link, $sql_inpoutput);
 
 		while ($row_inpoutput = mysqli_fetch_array($result_inpoutput)) {
-			print('<li>');
+			print('<li id="vtli'.$row_inpoutput['recid'].'">');
 			print('<input type="text" name="vtname" id="vt'.$row_inpoutput['recid'].'" class="set__list-item vitamin" value="'.$row_inpoutput['vitaminname'].'">');
-			print('<button class="button button_red set__button_del" id="vtdel'.$row_inpoutput['recid'].'">DEL</button>');
+			print('<button class="button button_red set__button_del vitdel" id="vtdel'.$row_inpoutput['recid'].'">DEL</button>');
 			print('</li>');
 		}
 ?>

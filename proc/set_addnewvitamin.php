@@ -1,5 +1,4 @@
 <?php
-//print_r($_POST);
 
 @include '../lib/var.php';
 @include '../lib/msqc.php';
