@@ -15,7 +15,8 @@ window.addEventListener('DOMContentLoaded', function () {
 		myLeg = document.getElementById('ftleg'),
 		myBelly = document.getElementById('ftbelly'),
 
-
+		newVitamin = document.getElementById('addvitinp'),
+		newVitaminBut = document.getElementById('addvitbutton'),
 
 		audChoose = new Audio('audio/mouseover3.mp3');
 
@@ -31,6 +32,7 @@ window.addEventListener('DOMContentLoaded', function () {
 	pParUpdate.addEventListener('click', bodyParUpdate, false);
 	bParUpdate.addEventListener('click', bodyParUpdate, false);
 
+	newVitaminBut.addEventListener('click', addNewVitamin, false);
 
 	function genItemSelect(it) {
 		if (it.classList.contains('inactive')) {
@@ -106,5 +108,39 @@ window.addEventListener('DOMContentLoaded', function () {
 
 			alert('All updated successfully!');
 		}
+	}
+
+	// ADD new VITAMIN to base
+	function addNewVitamin() {
+		if (!newVitamin.value) {
+			newVitamin.placeholder = "Add vitamin name!";
+		} else {
+			let vitaminName = newVitamin.value.toLowerCase(),
+				vitaminNameClear = vitaminName.replace(/['"]+/g, '');
+
+			updateVitaminList(vitaminNameClear);
+		}
+	}
+
+	function updateVitaminList(vitname) {
+		// Создаем экземпляр класса XMLHttpRequest
+		let request = new XMLHttpRequest();
+		// Указываем путь до файла на сервере, который будет обрабатывать наш запрос 
+		let url = "proc/set_addnewvitamin.php";
+
+		let params = "vitaminname=" + vitname;
+
+		request.open("POST", url, true);
+		request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		request.addEventListener("readystatechange", () => {
+			if (request.readyState === 4 && request.status === 200) {
+				//console.log(request.responseText);
+				let addedVitInfo = JSON.parse(request.responseText);
+
+				alert('You have added ' + addedVitInfo.newvitadded);
+			}
+		});
+
+		request.send(params);
 	}
 });

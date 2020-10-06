@@ -82,8 +82,11 @@ window.addEventListener('DOMContentLoaded', function () {
 			if (request.readyState === 4 && request.status === 200) {
 				let addedProductInfo = JSON.parse(request.responseText);
 
-				alert('You have added ' + addedProductInfo.newprodadded + ' (' + addedProductInfo.newcaladded + ' kcal)');
-
+				if (addedProductInfo.newid) {
+					alert('You have added ' + addedProductInfo.newprodadded + ' (' + addedProductInfo.newcaladded + ' kcal)');
+				} else {
+					alert('You already have this product =)');
+				}
 			}
 		});
 		request.send(params);
