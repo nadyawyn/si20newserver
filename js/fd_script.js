@@ -84,6 +84,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
 				if (addedProductInfo.newid) {
 					alert('You have added ' + addedProductInfo.newprodadded + ' (' + addedProductInfo.newcaladded + ' kcal)');
+
 				} else {
 					alert('You already have this product =)');
 				}
