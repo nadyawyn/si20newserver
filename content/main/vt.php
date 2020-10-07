@@ -51,6 +51,9 @@
 
 						?>
 					</ul>
+				<p>
+					*If you have just added new vitamins, click <button class="button button_em set__button_small" id="vitrefresh">HERE</button> to update this list (the vitamin data of the day will be lost).
+				</p>
 			</div>
 
 		</section>

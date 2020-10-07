@@ -153,6 +153,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
 			updateVitaminList(vitaminNameClear);
 		}
+
 	}
 
 	function updateVitaminList(vitname) {
@@ -172,6 +173,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
 				if (addedVitInfo.newvitadded) {
 					alert('You have added ' + addedVitInfo.newvitadded);
+					location.reload();
 				} else {
 					alert('You already have such vitamin =)');
 				}
