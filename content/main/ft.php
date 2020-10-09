@@ -11,7 +11,7 @@
 				$result_ft = mysqli_query($link, $sql_ft);
 
 				while($row_ft = mysqli_fetch_array($result_ft)){
-					print('<li class="fitness__list-item ft'.$row_ft['recid'].'" title="'.$row_ft['fitname'].'" style="background-image:url(icons/fitness/'.$row_ft['recid'].'.png)"></li>');
+					print('<li class="fitness__list-item ft'.$row_ft['recid'].'" id="fitit'.$row_ft['recid'].'" title="'.$row_ft['fitname'].'" style="background-image:url(icons/fitness/'.$row_ft['recid'].'.png)"></li>');
 				}
 
 			?>
@@ -20,3 +20,4 @@
 			
 	</div>
 </section>
+<script src="js/ft_script.js"></script>
