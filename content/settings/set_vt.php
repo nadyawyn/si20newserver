@@ -1,5 +1,5 @@
-<section class="main_settings-section">
-	<h2>Vitamins</h2>
+<section class="main_settings-section minified">
+	<h2 class="main_settings-section-title">Vitamins</h2>
 	<div class="set__list set__list_vt">
 		<input type="text" name="vitaminins" placeholder="Vitamin name" class="ad__base-input ad__base-input_food" id="addvitinp">
 		<button class="button button_em ad__base_button" id="addvitbutton">ADD</button>

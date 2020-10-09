@@ -1,5 +1,5 @@
 <section class="main_report-section">
-	<h2 id="ad">Food Diary</h2>
+	<h2 id="fd">Food Diary</h2>
 	<div class="ad__wrapper">
 	<?php
 	$thisdatabasename = 'si__'.$myname.'_adtracker';

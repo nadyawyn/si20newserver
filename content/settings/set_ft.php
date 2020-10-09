@@ -1,5 +1,5 @@
-<section class="main_settings-section">
-	<h2>Fitness</h2>
+<section class="main_settings-section minified">
+	<h2 class="main_settings-section-title">Fitness</h2>
 	<h3 class="ad__title">Personal parameters</h3>
 	<?php
 	$thisdatabasename = 'si__'.$myname.'_fitnesspar';

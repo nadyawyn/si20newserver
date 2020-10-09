@@ -20,7 +20,26 @@ window.addEventListener('DOMContentLoaded', function () {
 		existingVitamin = document.querySelectorAll('.vitamin'),
 		vitDelBtn = document.querySelectorAll('.vitdel'),
 
+		sectionTitle = document.querySelectorAll('.main_settings-section-title'),
+
 		audChoose = new Audio('audio/mouseover3.mp3');
+
+	//TOGGLE sections
+
+	sectionTitle.forEach(function (item) {
+		item.addEventListener('click', function () {
+			audChoose.play();
+
+			if (item.parentNode.classList.contains('minified')) {
+				item.parentNode.classList.remove('minified');
+			} else {
+				item.parentNode.classList.add('minified');
+			}
+
+		});
+	});
+
+
 
 	//Включение и выключение модулей
 	genItems.forEach(function (item) {

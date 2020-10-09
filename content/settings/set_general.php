@@ -1,5 +1,5 @@
-<section class="main_settings-section">
-	<h2>General</h2>
+<section class="main_settings-section minified">
+	<h2 class="main_settings-section-title">General</h2>
 		<div class="main_settings-wrapper">
 			<?php 
 			$thisdatabasename = 'si__'.$myname.'_set-general';
