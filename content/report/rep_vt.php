@@ -41,7 +41,7 @@
 					}
 
 					//$sql_vtu = 'SELECT * FROM `'.$thisdatabasename.'` WHERE `recdate` = "2020-10-'.$j.'" ORDER BY `vitaminid`';
-					$sql_vtu = 'SELECT * FROM `'.$thisdatabasename3.'` WHERE `recdate` = "2020-10-'.$j.'" ORDER BY `vitaminid`';
+					$sql_vtu = 'SELECT * FROM `'.$thisdatabasename3.'` WHERE `recdate` = "2020-'.$today_m.'-'.$j.'" ORDER BY `vitaminid`';
 
 					$result_vtu = mysqli_query($link, $sql_vtu);
 					print('<ul class="vitamins__results" id="vtru'.$j.'">');
