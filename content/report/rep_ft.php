@@ -7,6 +7,19 @@
 		</h3>
 
 		<div class="fitness__wrapper_output">
+		<?php
+			for($i=1; $i<=$enddate; $i++){
+				if ($i < 10) {
+					$i = "0".$i;
+				}
+
+				print('<div class="fitness__day"><div class="fitness__day_date">');
+				print $i;
+				print('</div><div class="fitness__day_res">');
+				print('');
+				print('</div></div>');
+			}
+		?>
 
 		</div>
 </section>
