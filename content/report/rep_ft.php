@@ -30,4 +30,136 @@
 		?>
 
 		</div>
+		<div class="fitness__output_body">
+		<h3 class="ad__title">My body progress</h3>
+		<div class="fitness__overall">
+			<div class="fitness__wrapper">
+				<div class="fitness__wrapper_out fitness__wrapper_date"></div>
+				<div class="fitness__wrapper_out name">Weight, kg</div>
+				<div class="fitness__wrapper_out name">Breast, cm</div>
+				<div class="fitness__wrapper_out name">Waist, cm</div>
+				<div class="fitness__wrapper_out name">Hips, cm</div>
+				<div class="fitness__wrapper_out name">Leg, cm</div>
+				<div class="fitness__wrapper_out name">Belly, cm</div>
+			</div>
+			<div class="fitness__wrapper">
+				<div class="fitness__wrapper_out fitness__wrapper_date">
+					<?php
+							$thisdatabasename1 = 'si__'.$myname.'_fitnesspar';
+							
+							//Выводим параметры тела за все даты
+									
+							$sql_bp = 'SELECT `recdate` FROM `'.$thisdatabasename1.'` ORDER BY `recdate` DESC';
+							
+							$result_bp = mysqli_query($link, $sql_bp);
+							while ($row_bp = mysqli_fetch_array($result_bp)) {
+								print('<div>');
+								print($row_bp['recdate']);		
+								print('</div>');	
+							}			
+					?>
+				</div>
+				<div class="fitness__wrapper_out">
+					<?php
+							$thisdatabasename1 = 'si__'.$myname.'_fitnesspar';
+							
+							//Выводим параметры тела за все даты
+									
+							$sql_bp = 'SELECT * FROM `'.$thisdatabasename1.'` ORDER BY `recdate` DESC';
+							
+							$result_bp = mysqli_query($link, $sql_bp);
+							while ($row_bp = mysqli_fetch_array($result_bp)) {
+								print('<div class="fitness__bp-value" style="width: '.$row_bp['myweight'].'px">');
+								print($row_bp['myweight']);		
+								print('</div>');	
+							}			
+					?>
+				</div>
+				<div class="fitness__wrapper_out">
+					<?php
+							$thisdatabasename1 = 'si__'.$myname.'_fitnesspar';
+							
+							//Выводим параметры тела за все даты
+									
+							$sql_bp = 'SELECT * FROM `'.$thisdatabasename1.'` ORDER BY `recdate` DESC';
+							
+							$result_bp = mysqli_query($link, $sql_bp);
+							while ($row_bp = mysqli_fetch_array($result_bp)) {
+								print('<div class="fitness__bp-value" style="width: '.$row_bp['mybreast'].'px">');
+								print($row_bp['mybreast']);		
+								print('</div>');	
+							}			
+					?>
+				</div>
+				<div class="fitness__wrapper_out">
+					<?php
+							$thisdatabasename1 = 'si__'.$myname.'_fitnesspar';
+							
+							//Выводим параметры тела за все даты
+									
+							$sql_bp = 'SELECT * FROM `'.$thisdatabasename1.'` ORDER BY `recdate` DESC';
+							
+							$result_bp = mysqli_query($link, $sql_bp);
+							while ($row_bp = mysqli_fetch_array($result_bp)) {
+								print('<div class="fitness__bp-value" style="width: '.$row_bp['mywaist'].'px">');
+								print($row_bp['mywaist']);		
+								print('</div>');	
+							}			
+					?>
+				</div>
+				<div class="fitness__wrapper_out">
+					<?php
+							$thisdatabasename1 = 'si__'.$myname.'_fitnesspar';
+							
+							//Выводим параметры тела за все даты
+									
+							$sql_bp = 'SELECT * FROM `'.$thisdatabasename1.'` ORDER BY `recdate` DESC';
+							
+							$result_bp = mysqli_query($link, $sql_bp);
+							while ($row_bp = mysqli_fetch_array($result_bp)) {
+								print('<div class="fitness__bp-value" style="width: '.$row_bp['myhips'].'px">');
+								print($row_bp['myhips']);		
+								print('</div>');	
+							}			
+					?>
+				</div>
+				<div class="fitness__wrapper_out">
+					<?php
+							$thisdatabasename1 = 'si__'.$myname.'_fitnesspar';
+							
+							//Выводим параметры тела за все даты
+									
+							$sql_bp = 'SELECT * FROM `'.$thisdatabasename1.'` ORDER BY `recdate` DESC';
+							
+							$result_bp = mysqli_query($link, $sql_bp);
+							while ($row_bp = mysqli_fetch_array($result_bp)) {
+								print('<div class="fitness__bp-value" style="width: '.$row_bp['myleg'].'px">');
+								print($row_bp['myleg']);		
+								print('</div>');	
+							}			
+					?>
+				</div>
+				<div class="fitness__wrapper_out">
+					<?php
+							$thisdatabasename1 = 'si__'.$myname.'_fitnesspar';
+							
+							//Выводим параметры тела за все даты
+									
+							$sql_bp = 'SELECT * FROM `'.$thisdatabasename1.'` ORDER BY `recdate` DESC';
+							
+							$result_bp = mysqli_query($link, $sql_bp);
+							while ($row_bp = mysqli_fetch_array($result_bp)) {
+								print('<div class="fitness__bp-value" style="width: '.$row_bp['mybelly'].'px">');
+								print($row_bp['mybelly']);		
+								print('</div>');	
+							}			
+					?>
+				</div>
+			</div>
+		
+
+
+		</div>
+	</div>	
+		
 </section>

@@ -44,26 +44,31 @@
 	<div class="set__list">
 	<?php
 			while ($row_ft2 = mysqli_fetch_array($result_ft2)) {
+				print('<span class="set__list-item-name">Breast:</span>');
 				print('<input type="text" name="ftbreast" id="ftbreast" class="set__list-item set__list-item_body breast" placeholder="Breast" ');
 				if ($row_ft2['mybreast'] != '0.0'){
 					print('value="'.$row_ft2['mybreast'].'"');
 				} 	
 				print('>');
+				print('<span class="set__list-item-name">Waist:</span>');
 				print('<input type="text" name="ftwaist" id="ftwaist" class="set__list-item set__list-item_body waist" placeholder="Waist" ');
 				if ($row_ft2['mywaist'] != '0.0'){
 					print('value="'.$row_ft2['mywaist'].'"');
 				} 	
-				print('>');
+				print('><br>');
+				print('<span class="set__list-item-name">Hips:</span>');
 				print('<input type="text" name="fthips" id="fthips" class="set__list-item set__list-item_body hips" placeholder="Hips" ');
 				if ($row_ft2['myhips'] != '0.0'){
 					print('value="'.$row_ft2['myhips'].'"');
 				} 	
 				print('>');
+				print('<span class="set__list-item-name">Leg:</span>');
 				print('<input type="text" name="ftleg" id="ftleg" class="set__list-item set__list-item_body leg" placeholder="Leg" ');
 				if ($row_ft2['myleg'] != '0.0'){
 					print('value="'.$row_ft2['myleg'].'"');
 				} 	
-				print('>');
+				print('><br>');
+				print('<span class="set__list-item-name">Belly:</span>');
 				print('<input type="text" name="ftbelly" id="ftbelly" class="set__list-item set__list-item_body belly" placeholder="Belly" ');
 				if ($row_ft2['mybelly'] != '0.0'){
 					print('value="'.$row_ft2['mybelly'].'"');
@@ -71,8 +76,8 @@
 				print('>');
 			}
 		?>	
-		 
-		<button class="button button_em ad__base_button" id="setbpupdate">UPDATE</button>
+		<br><br>
+		<button class="button button_em ad__base_button button_set" id="setbpupdate">UPDATE</button>
 	</div>
 
 </section>
