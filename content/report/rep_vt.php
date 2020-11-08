@@ -58,21 +58,7 @@
 
 
 				?>
-			<!-- <ul class="vitamins__results">
-				<li class="complete"></li>
-				<li></li>
-				<li></li>		
-			</ul>
-			<ul class="vitamins__results">
-				<li></li>
-				<li class="complete"></li>
-				<li class="complete"></li>		
-			</ul>
-			<ul class="vitamins__results">
-				<li class="complete"></li>
-				<li></li>
-				<li class="complete"></li>		
-			</ul> -->
+		
 		</div>
 	</div>
 </section>
