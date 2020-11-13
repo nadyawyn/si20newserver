@@ -56,7 +56,7 @@ window.addEventListener('DOMContentLoaded', function () {
 		request.addEventListener("readystatechange", () => {
 			if (request.readyState === 4 && request.status === 200) {
 				let todayFitInfo = JSON.parse(request.responseText);
-				console.log(todayFitInfo);
+				//console.log(todayFitInfo);
 
 				for (let i = 0; i < todayFitInfo.length; i++) {
 					let squareId = todayFitInfo[i],
