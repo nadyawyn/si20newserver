@@ -1,8 +1,7 @@
 <section class="main__section main__section_ht">
-			<div class="container container_padh">
-				<h2 class="main__title">HabitTracker</h2>
-
-				<h3 class="habit__title">
+	<div class="container container_padh">
+		<h2 class="main__title">HabitTracker</h2>
+			<h3 class="habit__title">
 				<?php 
 					echo $today_mw;
 				?>
@@ -66,7 +65,7 @@
 												if($row_hab['habitres'] == 1) {
 													print('complete');
 												}
-												print('" id="hab'.$row_hab['habitid'].'">');
+												print('" id="hab'.$row_hab['recid'].'">');
 													if($row_hab['habitid'] == 1){
 														print($thisday);
 													}
@@ -79,11 +78,8 @@
 							
 
 						?>
-						
-						
-
-
-					</div>
-				</div>
 			</div>
-		</section>
+		</div>
+	</div>
+</section>
+<script src="js/ht_script.js"></script>
